@@ -1,0 +1,66 @@
+/* App.css */
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+/* -----------------------------------------
+  LANDING PAGE BACKGROUND IMPLEMENTATION 
+  -----------------------------------------
+*/
+.landing-page {
+  /* Use a high-quality plant image. You can replace this URL with your own local image path */
+  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Ensure it takes up the full viewport height */
+  height: 100vh;
+  width: 100%;
+
+  /* Flexbox to center the content (Get Started button/Welcome text) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Optional: Add a dark overlay so white text pops against the background */
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
+  z-index: 1;
+}
+
+/* Ensure content sits on top of the overlay */
+.landing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* -----------------------------------------
+  BUTTON STYLES 
+  -----------------------------------------
+*/
+.get-started-btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
